@@ -342,28 +342,39 @@ let obj3 = {
 };
 
 function deepComparison ( obj1, obj2 ) {
+    // Проверяем идентичны ли объекты
+    if ( obj1 === obj2) return true;
+
+    // Проверяем типы оъектов
+    if ( typeof obj1 !== 'object' || typeof obj2 !== 'object' ) return false;
    
+    // Получаем ключи объектов и сверяем их количество
     const objKeys1 = Object.keys(obj1);
     const objKeys2 = Object.keys(obj2);
 
     if( objKeys1.length !== objKeys2.length) return false;
 
+
     for ( let key of objKeys1) {
+        // Проверяем существует ли ключ в obj2
         if (!(key in obj2)) {
             return false;
-    }
-
-    const val1 = obj1[key];
-    const val2 = obj2[key];
-
-    if ( val1 === 'object' && val2 === 'object') {
-        if (!deepEqual(val1,val2)){
-            return false;
         }
-    } else if ( val1 !== val2 ) { 
-        return false; 
+
+        // Получаем значения ключей
+        const val1 = obj1[key];
+        const val2 = obj2[key];
+
+        // Если значения являются объектами, вызываем рекурсию
+        if ( typeof val1 === 'object' && typeof val2 === 'object') {
+            if (!deepComparison(val1,val2)){
+                return false;
+            }
+        } else if ( val1 !== val2 ) {  //Если значения являются примитивными типами, сравниваем просто так
+            return false; 
+        }
     }
-}
+
     return true;
 }
 
