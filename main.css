@@ -1,0 +1,220 @@
+:root {
+    --violet: #cdb1e2;
+    --blue: #80acdf;
+    --green: #7bca8a;
+    --orange: #e19158;
+    --red: #ea6a6a;
+    --yellow: #f6cf65;
+
+    --deep-violet: #b482d8;
+    --deep-blue: #5596e1;
+    --deep-green: #3f9c53;
+    --deep-orange: #ce753f;
+    --deep-red: #c83e42;
+    --deep-yellow: #e8bd45; 
+
+    --box-size: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    background-color: rgb(214, 218, 224);
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+.form_container{
+    background-color: #fff;
+    color:black;
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+}
+
+.header_title {
+    font-size: 18px;
+}
+
+.timeframe ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.time_item button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #9ca1aa;
+}
+
+.time_item button.selected_element {
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+
+
+.chart_doughnut {
+    background: conic-gradient(var(--violet)0% 32%, 
+        var(--blue)32% 62%, 
+        var(--green)62% 79%, 
+        var(--orange)79% 87%, 
+        var(--red)87% 91%, 
+        var(--yellow)91% 100%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart_events {
+    width: 74%;
+    height: 74%;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart_events_text_1 {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 0px 5px 15px;
+}
+
+.chart_events_text_2 {
+    color: #9ca1aa;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.Legend {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+}
+
+
+.legend_item {
+    padding: 0px 0px 0px 30px;
+    position: relative;
+}
+
+.legend_item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--box-size);
+    height: var(--box-size);
+    border-radius: 20%;
+    border: 1px solid;
+
+}
+
+.violet.legend_item::before {
+    background-color: var(--violet);
+    border-color: var(--deep-violet);
+}
+
+.blue.legend_item::before {
+    background-color: var(--blue);
+    border-color: var(--deep-blue);
+}
+
+.green.legend_item::before {
+    background-color: var(--green);
+    border-color: var(--deep-green);
+}
+
+.orange.legend_item::before {
+    background-color: var(--orange);
+    border-color: var(--deep-orange);
+}
+
+.red.legend_item::before {
+    background-color: var(--red);
+    border-color: var(--deep-red);
+}
+
+.yellow.legend_item::before {
+    background-color: var(--yellow);
+    border-color: var(--deep-yellow);
+}
+
+.legend_item_title {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend_item_events {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.information{
+    display: flex;
+    justify-content: space-between;
+}
+.legend_item_percentage {
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 15px;
+    margin: 0px 0px 0px 15px;
+}
+
+.violet.legend_item_percentage {
+    color: var(--deep-violet);
+}
+
+.blue.legend_item_percentage {
+    color: var(--deep-violet);
+}
+
+.violet.legend_item_percentage {
+    color: var(--deep-blue);
+}
+
+.green.legend_item_percentage {
+    color: var(--deep-green);
+}
+
+.orange.legend_item_percentage {
+    color: var(--deep-orange);
+}
+
+.red.legend_item_percentage {
+    color: var(--deep-red);
+}
+
+.yellow.legend_item_percentage {
+    color: var(--deep-yellow);
+}
+
