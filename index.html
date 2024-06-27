@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2</title>
+    <link rel="stylesheet" href="main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="form_2">
+        <div class="header">
+            <h1 class="header_title">График отправки</h1>
+        </div>
+
+    <form class="form">
+        <div class="form_container">
+            <div class="section">
+                <input type="checkbox" checked>
+                <label class="label_info">Сразу</label>    
+            </div>
+
+            <div class="block">
+                <div class="sources">
+                    <div class="title">Источники <p>и события</p></div>
+                    <button class="button">+ Камеры и объекты</button>
+                    <div class="information">Выбрано <span>0 источника/0 события</span></div>
+                </div>
+
+                <div class="violations">
+                    <label class="label_info">
+                        <input type="checkbox" class="switch">
+                        <span class="checkbox_inner">
+                            Только подтвержденные нарушения
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form_container"> 
+            <div class="section">
+                <input type="checkbox" checked>
+                <label class="label_info">Настраиваемый</label>
+            </div>
+
+            <div class="block_2">
+                <div class="title_2">График №1</div>
+                <div class="sources">
+                    <div class="title">Источники <p>и события</p></div>
+                    <button class="button">+ Камеры и объекты</button>
+                    <div class="information">Выбрано <span>0 источника/0 события</span></div>
+                </div>
+                <div class="schedule">
+                    <div class="title">Расписание</div>
+                    <div class="days">
+                        <button class="weekday">Пн</button>
+                        <button class="weekday">Вт</button>
+                        <button class="weekday">Ср</button>
+                        <button class="weekday">Чт</button>
+                        <button class="weekday">Пт</button>
+                        <button class="weekday">Сб</button>
+                        <button class="weekday">Вс</button>
+                    </div>
+                    <div class="time">
+                        <input class=time_input type="time" value="00:00">
+                        <label class="time_label">Время</label>
+                    </div>
+                </div>
+                <div class="violations">
+                    <label class="label_info">
+                        <input type="checkbox" class="switch">
+                        <span class="checkbox_inner">
+                            Только подтвержденные нарушения
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="basket">
+                <button></button>
+                <i class='bx bx-trash'></i>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <i class='bx bx-calendar-alt'></i>
+            <button class="add-schedule">Добавить график</button>
+        </div>
+
+    </form>
+      
+    </div>    
+</body>
+</html>

@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    font-size: 14px;
+}
+
+.form_2 {
+    background-color: #fff;
+    color: black;
+    width: 750px;
+    height: 700px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.header_title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form_container {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.section {
+    width: 145px;
+}
+
+.label_info {
+    margin-left: 5px;
+}
+
+.block {
+    width: 500px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid rgb(207, 203, 203);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sources {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.button {
+    background-color: #fff;
+    width: 170px;
+    height: 27px;
+    border-radius: 7px;
+    border: 2px solid rgb(86, 137, 210);
+    color: rgb(86, 137, 210);
+}
+
+.information {
+    color: rgb(207, 203, 203);
+}
+
+span {
+    font-weight: 600;
+}
+
+
+.switch {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    appearance: none;
+} 
+
+.checkbox_inner{
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px;
+    padding-left: 54px;
+    margin: -7px;
+}
+
+.checkbox_inner::before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 38px;
+    height: 22px;
+    background-color: rgb(171, 172, 174);
+    border-radius: 18px;
+}
+
+.checkbox_inner::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+}
+
+.block_2 {
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid rgb(207, 203, 203);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.title_2 {
+    color: rgb(207, 203, 203);
+    font-weight: 600;
+}
+
+.schedule {
+    display: flex;
+    align-items: center;
+}
+
+.days {
+    margin: 0px 15px 0px 15px;
+}
+
+.weekday {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(203, 204, 205);
+    text-align: center;
+    font-size: 11px;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.time_input {
+    border-radius: 4px;
+    height: 25px;
+    padding: 0 10px;
+    font-size: 11px;
+    border-color: rgb(207, 203, 203);
+    border: 2px solid  rgb(207, 203, 203);
+}
+
+.time_label {
+    font-size: 11px;
+    color:  rgb(207, 203, 203);
+    background-color: #fff;
+    position: absolute;
+    top: -6px;
+    left: 10%;
+    padding: 0 5px;
+    user-select: none;
+}
+
+.basket {
+    position: relative;
+}
+
+.basket i {
+    position: absolute;
+    font-size: 23px;
+    color: rgb(171, 172, 174);
+    top: 5px;
+}
+
+.calendar {
+    margin-left: 145px;
+    position: relative;
+}
+
+.calendar i {
+    position: absolute;
+    font-size: 14px;
+    color: rgb(59, 175, 125);
+    left: 15px;
+    bottom: 6px;
+}
+
+.add-schedule {
+    background-color: #fff;
+    width: 160px;
+    height: 27px;
+    border-radius: 7px;
+    border: 2px solid rgb(59, 175, 125);
+    color: rgb(59, 175, 125);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 10px;
+}
