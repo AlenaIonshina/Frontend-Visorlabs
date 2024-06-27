@@ -1,0 +1,31 @@
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.progress_bar{
+    width: 500px;
+    height: 200px;
+    background-color: #000;
+    display: flex;
+}
+
+.block{
+    background-color: #000;
+    width: 400px;
+    height: 40px;
+    border: 1px solid silver;
+    box-shadow: 0 0 10px rgb(255, 255, 255, 0.7);
+    margin: 75px 30px 75px 60px;
+    display: flex;
+}
+
+.line{
+    width: 290px;
+    height: 30px;
+    background-color: #f2b329;
+    box-shadow: 0 0 10px rgb(255,165,0, 0.85);
+    margin: 5px 30px 5px 5px;
+    background-image: linear-gradient(180deg, rgb(228, 160, 33)30%, rgb(202, 141, 28)60%,rgb(208, 141, 60)75%,rgb(228, 160, 33));
+}
