@@ -380,4 +380,205 @@ function deepComparison ( obj1, obj2 ) {
 
 console.log (deepComparison(obj1,obj2));
 console.log (deepComparison(obj1,obj3));
+console.log('hello')
+
+
+// 9. Напишите функцию, которая глубоко находит пересечения объектов 
+// и возвращает объекты пересечений в виде массива.
+
+const objA = { a: 1, b: { c: 2 }, d: 4 };
+const objC = { a: 1, b: { c: 3 }, f: 4 };
+
+function deepIntersection ( obj1, obj2 ) {
+    let uniqueEl = [];
+
+    if ( typeof obj1 !== 'object' || typeof obj2 !== 'object') return false;
+
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+    
+
+    for ( let key of keys1 ){  
+        if ( key in obj2 ) {    // Проверяем, присутствует ли ключ в обоих объектах
+            
+        const value1 = obj1[key];
+        const value2 = obj2[key];
+
+        if ( typeof value1 === 'object' && typeof value2 === 'object') {
+            const nestedIntersection = deepIntersection(value1, value2);
+            // Если есть пересечения, добавляем их в результирующий массив
+                if ( nestedIntersection.length > 0 ) {
+                    uniqueEl.push({ [key]: nestedIntersection })
+                }
+                // Если значения равны, добавляем их в результирующий массив
+        } else if ( value1 === value2) {
+            uniqueEl.push( {[key]: value1} );
+        }
+    }
+    }
+    return uniqueEl;
+}
+
+console.log (deepIntersection(objA,objC));
+
+
+
+// 10.Напишите функцию, которая принимает в себя массив объектов и выводить только уникальные объекты
+
+// let list = [{a: 1}, {b: 2}, {c: 3}, {b: 2}, {b: 2}, {d: 4}, { a: 5}];
+
+// function getUniqueObjects (arr) {
+
+// // let you = [];
+// const uniqueKeys = new Set();
+
+// for ( let obj of arr) {
+//     for ( let key of Object.keys(obj)) {
+//         uniqueKeys.add(key);
+//     }
+// }
+// return uniqueKeys;
+// }
+// console.log(getUniqueObjects(list));
+
+
+
+// 11. Дан массив из чисел. напишите функцию, которая первым значением выводит только 
+// четные элементы массива, вторым значением выводит количество нечетных элементов 
+// массива с надписью “количество нечетных элементов: “число”, третьим аргументом 
+// выводит количество нулей в массиве.
+
+let numbers = [1, 4, 78, 90, 0, 11, 24, 15, 10, 100, 63, 17, 0];
+
+function ofNumbers( arr ) {
+    
+    let evenNumbers = arr.filter ( elem => elem % 2 === 0 );
+
+    let oddNumber = 0;
+    for ( let i = 0; i < arr.length; i++ ) {
+        if ( arr[i] % 2 !== 0 ) {
+            oddNumber++;
+        }
+    }
+
+    let zeroNumber = 0;
+    for ( let j = 0; j< arr.length; j++ ) {
+        if ( arr[j] === 0 ) {
+            zeroNumber++;
+        }
+    }
+    
+    console.log (evenNumbers);
+    console.log (`количество нечетных элементов:  ${oddNumber}`);
+    console.log (`количество количество нулей:  ${zeroNumber}`);
+}
+
+
+ofNumbers(numbers);
+
+
+
+// 12. Объедините два массива в один, где второй массив будет вставлен в середину первого массива.
+
+let arrNum = [ 1, 2, 47, 89, 30, 4];
+let arrSt = ['hello', 'Pete', 'JS'];
+
+function combiningArrays ( arr1, arr2 ) {
+     
+    let midleIndex = Math.floor(arrNum.length / 2);
+    
+    for ( let i = 0; i < arrSt.length; i++ ) {
+        arrNum.splice( midleIndex, 0, arrSt[i]);
+    }
+    console.log( arrNum );
+}
+
+combiningArrays(arrNum,arrSt);
+
+
+
+// 13. Напишите функцию, которая принимает в себя число. Это число должно выводить число Фибоначчи.
+// Пример: func(77) должно выводить 5527939700884757
+
+// fibonacci(0) = 0;
+// fibonacci(1) = 1;
+// fibonacci(n) = fibonacci(n-1) + fibonacci (n-2);
+
+// function fibonacci(number) {
+//     if ( number <= 1 ) {
+//         return number;
+//     } else {
+//         return fibonacci(number-1) + fibonacci(number-2);
+//     }
+// }
+
+// console.log (fibonacci(6));
+
+function fib(n) {
+    let a = 1;
+    let b = 1;
+    for ( let i = 3; i<= n; i++ ) {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+console.log(fib(6));
+console.log(fib(77));
+
+
+// 14. Напишите функцию, которая вычисляет экспоненту числа.
+
+function exp (base,n) {
+    if ( n === 0 ) {
+        return 1;
+    } else {
+        return Math.pow(base, n).toFixed(2);
+    }
+}
+
+console.log(exp(1, 0));
+console.log(exp(2, 1.5));
+console.log(exp(7, 3));
+
+
+// 15.Напишите функцию, которая выполняет бинарный поиск числа.
+
+
+const numberArray = [
+    1,  2,  3,   4,  5,  6,  7,  8,  9, 10, 11, 12,
+   13, 14, 15,  16, 17, 18, 19, 20, 21, 22, 23, 24,
+   25, 26, 27,  28, 29, 30, 31, 32, 33, 34, 35, 36,
+   37, 38, 39,  40, 41, 42, 43, 44, 45, 46, 47, 48,
+   49, 50, 51,  52, 53, 54, 55, 56, 57, 58, 59, 60,
+   61, 62, 63,  64, 65, 66, 67, 68, 69, 70, 71, 72,
+   73, 74, 75,  76, 77, 78, 79, 80, 81, 82, 83, 84,
+   85, 86, 87,  88, 89, 90, 91, 92, 93, 94, 95, 96,
+   97, 98, 99, 100
+ ] ;
+
+ function binarP ( arr, target ) {
+
+    let left = 0;
+    let right = arr.length - 1;
+    let mid;
+
+    while ( left <= right ) {
+        mid = Math.round((right-left) / 2) + left;
+
+        if ( target === arr[mid]) {
+            return mid;
+        } else if ( target < arr[mid]) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return -1;
+ }
+
+ console.log(binarP(numberArray, 78));
+ console.log(binarP(numberArray, 120));
 
