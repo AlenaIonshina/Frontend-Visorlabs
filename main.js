@@ -425,21 +425,26 @@ console.log (deepIntersection(objA,objC));
 
 // 10.Напишите функцию, которая принимает в себя массив объектов и выводить только уникальные объекты
 
-// let list = [{a: 1}, {b: 2}, {c: 3}, {b: 2}, {b: 2}, {d: 4}, { a: 5}];
+let list = [{a: 1}, {b: 2}, {c: 3}, {b: 2}, {b: 2}, {d: 4}, {a: 5}];
 
-// function getUniqueObjects (arr) {
+    function getUniqueObjects (arr) {
 
-// // let you = [];
-// const uniqueKeys = new Set();
+    const uniqueObjects = [];
+    const uniqueKeys = new Set();
 
-// for ( let obj of arr) {
-//     for ( let key of Object.keys(obj)) {
-//         uniqueKeys.add(key);
-//     }
-// }
-// return uniqueKeys;
-// }
-// console.log(getUniqueObjects(list));
+    arr.forEach ( obj => {
+
+        const objString = JSON.stringify(obj);
+
+        if ( !uniqueKeys.has(objString)) {
+            uniqueKeys.add(objString);
+            uniqueObjects.push(objString);
+        }
+    })
+
+    return uniqueObjects;
+}
+console.log(getUniqueObjects(list));
 
 
 
